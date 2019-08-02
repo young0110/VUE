@@ -49,7 +49,7 @@ export default {
     flex-direction: column;
   }
   .el-aside {
-    width: 200px;
+    width: auto;
     height: 100%;
     overflow: auto;
     background: #ccc;
