@@ -1,0 +1,37 @@
+{
+  "id": "1484634",
+  "name": "vue1",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "785013",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "982596",
+      "name": "图表",
+      "font_class": "tubiao",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "7333006",
+      "name": "菜单",
+      "font_class": "caidan1",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "10866825",
+      "name": "系统 设置",
+      "font_class": "changyongtubiao-mianxing-",
+      "unicode": "e798",
+      "unicode_decimal": 59288
+    }
+  ]
+}

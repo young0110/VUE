@@ -1,34 +1,32 @@
 <template>
   <div class="aside-basic">
+    <!-- 信息模块 -->
     <div ref="userBasic" :class="['user-basic', isCollapse ? 'inactive' : 'active']" @click="collapse"></div>
-    <el-menu default-active="1-4-1" class="el-menu-vertical" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-    <el-submenu index="1">
-      <template slot="title">
-        <i class="el-icon-location"></i>
-        <span slot="title">导航一</span>
+    <!-- 菜单列表 -->
+    <el-menu
+      class="el-menu-vertical"
+      :collapse="isCollapse"
+      :unique-opened="true"
+    >
+      <template v-for="menu in this.$store.state.menuList">
+        <el-submenu :index="menu.path" :key="menu.path" v-if="menu.children">
+          <template slot="title">
+            <i class="iconfont">&#xe798;</i>
+            <span slot="title">{{ menu.name }}</span>
+          </template>
+          <template v-for="child in menu.children">
+            <el-menu-item :index="child.path" :key="child.path">
+              <i class="el-icon-location"></i>
+              <span>{{ child.name }}</span>
+            </el-menu-item>
+          </template>
+        </el-submenu>
+        <el-menu-item :index="menu.path" :key="menu.path" v-if="!menu.children">
+          <i class="el-icon-menu"></i>
+          <span slot="title">{{ menu.name }}</span>
+        </el-menu-item>
       </template>
-      <el-menu-item-group>
-        <span slot="title">分组一</span>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="分组2">
-        <el-menu-item index="1-3">选项3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="1-4">
-        <span slot="title">选项4</span>
-        <el-menu-item index="1-4-1">选项1</el-menu-item>
-      </el-submenu>
-    </el-submenu>
-    <el-menu-item index="2">
-      <i class="el-icon-menu"></i>
-      <span slot="title">导航二</span>
-    </el-menu-item>
-    <el-menu-item index="3">
-      <i class="el-icon-setting"></i>
-      <span slot="title">导航三</span>
-    </el-menu-item>
-  </el-menu>
+    </el-menu>
   </div>
 </template>
 
@@ -37,7 +35,6 @@ export default {
   name: 'Menu',
   data () {
     return {
-      userBasicHeight: ['65px', '240px'],
       isCollapse: false,
       menuList: []
     }
@@ -45,15 +42,8 @@ export default {
   methods: {
     collapse () {
       this.isCollapse = !this.isCollapse
-    },
-    handleOpen (key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleClose (key, keyPath) {
-      console.log(key, keyPath)
     }
-  },
-  mounted () {}
+  }
 }
 </script>
 
@@ -64,13 +54,17 @@ export default {
   min-height: 400px;
   .user-basic {
     width: 100%;
-    height: 201px;
+    height: 200px;
+  }
+  .el-menu {
+    border: 0;
+    text-align: left;
   }
   .active {
-    height: 201px;
+    height: 200px !important;
   }
   .inactive {
-    height: 60px;
+    height: 60px !important;
   }
   .el-menu-vertical:not(.el-menu--collapse) {
     width: 240px;

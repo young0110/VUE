@@ -37,7 +37,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-
 .el-container {
   display: flex;
   flex-direction: row;
@@ -53,6 +52,7 @@ export default {
     height: 100%;
     overflow: auto;
     background: #ccc;
+    border-right: 1px solid #ccc;
   }
   .el-header {
     padding: 0 20px;
