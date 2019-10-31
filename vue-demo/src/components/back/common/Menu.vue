@@ -11,18 +11,18 @@
       <template v-for="menu in this.$store.state.menuList">
         <el-submenu :index="menu.path" :key="menu.path" v-if="menu.children">
           <template slot="title">
-            <i class="iconfont">&#xe798;</i>
+            <i :class="['iconfont', menu.icon]"></i>
             <span slot="title">{{ menu.name }}</span>
           </template>
           <template v-for="child in menu.children">
             <el-menu-item :index="child.path" :key="child.path">
-              <i class="el-icon-location"></i>
+              <!-- i class=""></i -->
               <span>{{ child.name }}</span>
             </el-menu-item>
           </template>
         </el-submenu>
         <el-menu-item :index="menu.path" :key="menu.path" v-if="!menu.children">
-          <i class="el-icon-menu"></i>
+          <i :class="['iconfont', menu.icon]"></i>
           <span slot="title">{{ menu.name }}</span>
         </el-menu-item>
       </template>
@@ -35,8 +35,7 @@ export default {
   name: 'Menu',
   data () {
     return {
-      isCollapse: false,
-      menuList: []
+      isCollapse: false
     }
   },
   methods: {
@@ -73,5 +72,9 @@ export default {
       width: 100%;
     }
   }
+}
+.iconfont {
+  font-size: 18px;
+  margin: 0 4px 0 0;
 }
 </style>

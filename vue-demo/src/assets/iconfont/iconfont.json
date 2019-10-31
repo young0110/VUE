@@ -8,28 +8,35 @@
     {
       "icon_id": "785013",
       "name": "菜单",
-      "font_class": "caidan",
+      "font_class": "menu",
       "unicode": "e648",
       "unicode_decimal": 58952
     },
     {
       "icon_id": "982596",
       "name": "图表",
-      "font_class": "tubiao",
+      "font_class": "charts",
       "unicode": "e670",
       "unicode_decimal": 58992
     },
     {
       "icon_id": "7333006",
       "name": "菜单",
-      "font_class": "caidan1",
+      "font_class": "color-menu",
       "unicode": "e691",
       "unicode_decimal": 59025
     },
     {
+      "icon_id": "7956069",
+      "name": "退出",
+      "font_class": "logout",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
       "icon_id": "10866825",
       "name": "系统 设置",
-      "font_class": "changyongtubiao-mianxing-",
+      "font_class": "setting",
       "unicode": "e798",
       "unicode_decimal": 59288
     }

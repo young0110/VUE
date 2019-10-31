@@ -8,7 +8,9 @@
     <!-- 主体模块 -->
     <section class="el-container is-vertical">
       <!-- 主体头部 -->
-      <header class="el-header"></header>
+      <header class="el-header">
+        <Header></Header>
+      </header>
       <!-- 主体内容 -->
       <main class="el-main"></main>
     </section>
@@ -16,10 +18,11 @@
 </template>
 
 <script>
-import Menu from '../back/common/Menu'
+import Menu from './common/Menu'
+import Header from './common/Header'
 import { mapState } from 'vuex'
 export default {
-  components: {Menu},
+  components: {Header, Menu},
   name: 'backHome',
   data () {
     return {
