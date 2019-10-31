@@ -7,6 +7,7 @@
       class="el-menu-vertical"
       :collapse="isCollapse"
       :unique-opened="true"
+      router
     >
       <template v-for="menu in this.$store.state.menuList">
         <el-submenu :index="menu.path" :key="menu.path" v-if="menu.children">
@@ -16,7 +17,7 @@
           </template>
           <template v-for="child in menu.children">
             <el-menu-item :index="child.path" :key="child.path">
-              <!-- i class=""></i -->
+              <!-- i class=""></i-->
               <span>{{ child.name }}</span>
             </el-menu-item>
           </template>
@@ -26,6 +27,7 @@
           <span slot="title">{{ menu.name }}</span>
         </el-menu-item>
       </template>
+
     </el-menu>
   </div>
 </template>

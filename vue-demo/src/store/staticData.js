@@ -5,7 +5,7 @@ const staticData = {
   menuList: [
     {
       name: '首页',
-      path: 'a',
+      path: '/index',
       icon: 'icon-menu'
     }, {
       name: '图表展示',
@@ -22,15 +22,15 @@ const staticData = {
       ]
     }, {
       name: '系统管理',
-      path: 'c',
+      path: 'system',
       icon: 'icon-setting',
       children: [
         {
           name: '用户管理',
-          path: 'c1'
+          path: '/system/userManager'
         }, {
           name: '角色管理',
-          path: 'c2'
+          path: '/system/roleManager'
         }
       ]
     }

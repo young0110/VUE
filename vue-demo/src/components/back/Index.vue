@@ -12,7 +12,9 @@
         <Header></Header>
       </header>
       <!-- 主体内容 -->
-      <main class="el-main"></main>
+      <main class="el-main">
+        <router-view></router-view>
+      </main>
     </section>
   </section>
 </template>

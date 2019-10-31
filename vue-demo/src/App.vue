@@ -35,7 +35,4 @@ li {
   padding: 0;
   margin : 0;
 }
-a {
-  color: #42b983;
-}
 </style>
