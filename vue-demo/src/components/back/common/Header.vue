@@ -10,7 +10,7 @@
       </el-dropdown>
       <i class="menu-split"></i>
       <div class="top-line-menu">
-        <i class="iconfont icon-logout"></i>
+        <i class="iconfont icon-logout" @click="logout"></i>
       </div>
     </div>
   </div>
@@ -18,7 +18,12 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  methods: {
+    logout() {
+      this.$router.push('login')
+    }
+  }
 }
 </script>
 

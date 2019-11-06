@@ -6,10 +6,10 @@
         <p>Login</p>
         <el-form label-width="100px">
           <el-form-item label="用户名">
-            <el-input/>
+            <el-input v-model="loginForm.userName"/>
           </el-form-item>
           <el-form-item label="密码">
-            <el-input/>
+            <el-input type="password" v-model="loginForm.password" />
           </el-form-item>
           <el-form-item>
             <el-button @click="login">登录</el-button>
