@@ -16,13 +16,13 @@
             <span slot="title">{{ menu.name }}</span>
           </template>
           <template v-for="child in menu.children">
-            <el-menu-item :index="child.path" :key="child.path">
+            <el-menu-item :index="child.path" :key="child.path" @click="selectMenu(menu, child)">
               <!-- i class=""></i-->
               <span>{{ child.name }}</span>
             </el-menu-item>
           </template>
         </el-submenu>
-        <el-menu-item :index="menu.path" :key="menu.path" v-if="!menu.children">
+        <el-menu-item :index="menu.path" :key="menu.path" v-if="!menu.children" @click="selectMenu(menu)">
           <i :class="['iconfont', menu.icon]"></i>
           <span slot="title">{{ menu.name }}</span>
         </el-menu-item>
@@ -43,6 +43,20 @@ export default {
   methods: {
     collapse () {
       this.isCollapse = !this.isCollapse
+    },
+    selectMenu (parent, child) {
+      let breadcrumbList = []
+      breadcrumbList.push({
+        name: parent.name,
+        path: parent.path
+      })
+      if (child) {
+        breadcrumbList.push({
+          name: child.name,
+          path: child.path
+        })
+      }
+      this.$store.commit('initBreadcrumbList', breadcrumbList)
     }
   }
 }

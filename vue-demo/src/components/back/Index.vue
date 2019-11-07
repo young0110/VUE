@@ -13,6 +13,9 @@
       </header>
       <!-- 主体内容 -->
       <main class="el-main">
+        <el-breadcrumb separator="/">
+          <el-breadcrumb-item v-for="(crumb, index) in this.$store.state.breadcrumbList" :key="index">{{ crumb.name }}</el-breadcrumb-item>
+        </el-breadcrumb>
         <router-view></router-view>
       </main>
     </section>

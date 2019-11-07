@@ -7,6 +7,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     menuList: data.menuList,
+    breadcrumbList: [],
     loginUser: data.loginUser
   },
   mutations: {
@@ -17,6 +18,9 @@ const store = new Vuex.Store({
     },
     logout: (state) => {
       state.loginUser = null
+    },
+    initBreadcrumbList: (state, list) => {
+      state.breadcrumbList = list
     }
   },
   actions: {
