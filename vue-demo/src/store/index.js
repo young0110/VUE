@@ -10,7 +10,14 @@ const store = new Vuex.Store({
     loginUser: data.loginUser
   },
   mutations: {
-
+    login: (state, userName) => {
+      state.loginUser = {
+        name: userName
+      }
+    },
+    logout: (state) => {
+      state.loginUser = null
+    }
   },
   actions: {
 

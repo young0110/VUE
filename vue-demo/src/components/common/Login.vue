@@ -6,10 +6,10 @@
         <p>Login</p>
         <el-form label-width="100px">
           <el-form-item label="用户名">
-            <el-input v-model="loginForm.userName"/>
+            <el-input autocomplete="off" v-model="loginForm.userName"/>
           </el-form-item>
           <el-form-item label="密码">
-            <el-input type="password" v-model="loginForm.password" />
+            <el-input type="password" autocomplete="off" v-model="loginForm.password" />
           </el-form-item>
           <el-form-item>
             <el-button @click="login">登录</el-button>
@@ -33,6 +33,8 @@ export default {
   },
   methods: {
     login () {
+      let userName = this.loginForm.userName
+      this.$store.commit('login', userName)
       this.$router.push('/home')
     }
   }
@@ -70,6 +72,7 @@ export default {
         margin: 30px auto 0;
         .el-input {
           width: 300px;
+          border-bottom: 2px solid #ccc;
         }
         .el-button {
           width: 300px;
