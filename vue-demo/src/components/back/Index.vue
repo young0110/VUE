@@ -70,9 +70,13 @@ export default {
     flex: 0 1 auto;
   }
   .el-main {
-    padding: 20px;
+    padding: 10px;
     background: #eee;
     flex: 1 1 auto;
+    overflow: hidden;
+    .el-breadcrumb {
+      padding: 10px 0;
+    }
   }
 }
 </style>

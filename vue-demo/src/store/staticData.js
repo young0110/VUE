@@ -34,6 +34,89 @@ const staticData = {
         }
       ]
     }
+  ],
+  userList: [
+    {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }, {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }, {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }, {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }, {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }, {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }, {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }, {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }, {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }, {
+      name: '张三',
+      phone: '15380762190',
+      sex: '男',
+      age: '27',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 1
+    }
   ]
 }
 export default staticData

@@ -7,6 +7,15 @@
 <script>
 export default {
   name: 'App'
+  /*  使用插件 persistedstate 解决 vuex 刷新数据丢失问题
+  created () {
+    if (sessionStorage.getItem('store')) {
+      this.$store.replaceState(Object.assign({}, this.$store.state, JSON.parse(sessionStorage.getItem('store'))))
+    }
+    window.addEventListener('beforeunload', () => {
+      sessionStorage.setItem('store', JSON.stringify(this.$store.state))
+    })
+  } */
 }
 </script>
 
@@ -28,15 +37,15 @@ h1, h2 {
 }
 ul {
   list-style-type: none;
-  padding: 0;
-  margin : 0;
+  padding : 0;
+  margin  : 0;
 }
 li {
-  padding: 0;
-  margin : 0;
+  padding : 0;
+  margin  : 0;
 }
 p {
-  margin: 0;
-  padding: 0;
+  padding : 0;
+  margin  : 0;
 }
 </style>
