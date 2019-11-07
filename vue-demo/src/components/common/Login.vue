@@ -6,10 +6,10 @@
         <p>Login</p>
         <el-form label-width="100px">
           <el-form-item label="用户名">
-            <el-input autocomplete="off" v-model="loginForm.userName"/>
+            <el-input auto-complete="off" v-model="loginForm.userName"/>
           </el-form-item>
           <el-form-item label="密码">
-            <el-input type="password" autocomplete="off" v-model="loginForm.password" />
+            <el-input type="password" auto-complete="off" v-model="loginForm.password" />
           </el-form-item>
           <el-form-item>
             <el-button @click="login">登录</el-button>
