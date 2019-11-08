@@ -1,5 +1,14 @@
 <template>
   <div class="main">
+    <!-- 搜索栏 -->
+    <div class="search-bar">
+      <el-form class="search-form" v-model="searchParams" label-width="80px">
+        <el-form-item label="姓名"><el-input clearable v-model="searchParams.name"></el-input></el-form-item>
+        <el-form-item label="手机号"><el-input clearable v-model="searchParams.phone"></el-input></el-form-item>
+        <el-button class="search-btn" @click="handleSearch">查询</el-button>
+      </el-form>
+    </div>
+    <!-- 数据表格 -->
     <div class="data-list">
       <el-table
         class="list-content"
@@ -23,14 +32,15 @@
       <el-pagination class="list-page"
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
-        :current-page="searchParams.currentPage"
+        :current-page="searchParams.pageNo"
         :page-sizes="[10, 20, 30]"
         :page-size="searchParams.pageSize"
         layout="total, sizes, prev, pager, next, jumper"
         :total="total">
       </el-pagination>
     </div>
-    <el-dialog class="user-dialog" :title="title" :visible.sync="formVisible">
+    <!-- 弹出框 -->
+    <el-dialog class="dialog" :title="title" :visible.sync="formVisible">
       <el-form :model="userForm" label-width="80px">
         <el-form-item label="姓名">
           <el-input v-model="userForm.name" auto-complete="off"></el-input>
@@ -53,7 +63,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="formVisible = false">取 消</el-button>
-        <el-button type="primary" @click="formVisible = false">确 定</el-button>
+        <el-button type="primary" @click="submitForm">确 定</el-button>
       </div>
     </el-dialog>
   </div>
@@ -67,14 +77,17 @@ export default {
     return {
       dataLoading: true,
       searchParams: {
-        pageSize: 10,
-        currentPage: 1
+        name: '',
+        phone: '',
+        pageNo: 1,
+        pageSize: 10
       },
       dataList: [],
       total: 0,
       formVisible: false,
       title: '',
       userForm: {
+        id: null,
         name: '',
         phone: '',
         sex: '',
@@ -87,10 +100,22 @@ export default {
   methods: {
     handleSizeChange () {},
     handleCurrentChange () {},
+    handleSearch() {
+      this.searchParams.name = this.searchParams.name.trim()
+      this.searchParams.phone = this.searchParams.phone.trim()
+      if (this.searchParams.name) {
+        this.dataList = this.dataList.filter(it => it.name.indexOf(this.searchParams.name) > 0)
+      } else if (this.searchParams.phone) {
+        this.dataList = this.dataList.filter(it => it.phone.indexOf(this.searchParams.phone) > 0)
+      } else {
+        this.dataList = BasicData.userList
+      }
+    },
     handleEdit (index, row) {
       this.title = '编辑用户'
       this.formVisible = true
       this.userForm = {
+        id: row.id,
         name: row.name,
         phone: row.phone,
         sex: row.sex,
@@ -99,7 +124,31 @@ export default {
         address: row.address
       }
     },
-    handleDelete (index, row) {}
+    handleDelete (index, row) {
+      this.$confirm('确认删除该用户？', {
+        title: '提示',
+        type: 'warning'
+      }).then(() => {
+        this.dataList = this.dataList.filter((it, i) => i !== index)
+      })
+    },
+    submitForm () {
+      let userInfo = this.userForm
+      if (userInfo.id) {
+        let temp = this.dataList.find(it => it.id === userInfo.id)
+        if (temp) {
+          temp.name = userInfo.name
+          temp.phone = userInfo.phone
+          temp.sex = userInfo.sex
+          temp.age = userInfo.age
+          temp.company = userInfo.company
+          temp.address = userInfo.address
+        }
+      } else {
+        this.dataList.push(userInfo)
+      }
+      this.formVisible = false
+    }
   },
   created () {
     this.dataList = BasicData.userList
@@ -114,6 +163,29 @@ export default {
   width: 100%;
   height: 100%;
   overflow: auto;
+  .search-bar {
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+    background: #ddd;
+    .search-form {
+      width: 100%;
+      display: flex;
+      .el-form-item {
+        width: auto;
+        margin: 20px 0;
+        .el-input {
+          width: 200px;
+        }
+      }
+      .search-btn {
+        width: 140px;
+        margin: 20px 20px;
+        align-self: flex-end;
+        background: #ccc;
+      }
+    }
+  }
   .data-list {
     padding: 10px 0;
     .list-content {}
@@ -121,7 +193,7 @@ export default {
       padding: 20px 0 0 0;
     }
   }
-  .user-dialog {
+  .dialog {
     .el-dialog {
       width: 600px;
       .el-input {

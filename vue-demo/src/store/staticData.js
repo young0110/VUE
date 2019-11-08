@@ -37,6 +37,7 @@ const staticData = {
   ],
   userList: [
     {
+      id: 1,
       name: '张三',
       phone: '15380762190',
       sex: '男',
@@ -45,6 +46,16 @@ const staticData = {
       address: '南京江宁区江宁街道',
       role: 1
     }, {
+      id: 2,
+      name: '李四',
+      phone: '18061238109',
+      sex: '男',
+      age: '25',
+      company: '南京中谷芯信息',
+      address: '南京江宁区江宁街道',
+      role: 0
+    }, {
+      id: 3,
       name: '张三',
       phone: '15380762190',
       sex: '男',
@@ -53,6 +64,7 @@ const staticData = {
       address: '南京江宁区江宁街道',
       role: 1
     }, {
+      id: 4,
       name: '张三',
       phone: '15380762190',
       sex: '男',
@@ -61,6 +73,7 @@ const staticData = {
       address: '南京江宁区江宁街道',
       role: 1
     }, {
+      id: 5,
       name: '张三',
       phone: '15380762190',
       sex: '男',
@@ -69,6 +82,7 @@ const staticData = {
       address: '南京江宁区江宁街道',
       role: 1
     }, {
+      id: 6,
       name: '张三',
       phone: '15380762190',
       sex: '男',
@@ -77,6 +91,7 @@ const staticData = {
       address: '南京江宁区江宁街道',
       role: 1
     }, {
+      id: 7,
       name: '张三',
       phone: '15380762190',
       sex: '男',
@@ -85,6 +100,7 @@ const staticData = {
       address: '南京江宁区江宁街道',
       role: 1
     }, {
+      id: 8,
       name: '张三',
       phone: '15380762190',
       sex: '男',
@@ -93,6 +109,7 @@ const staticData = {
       address: '南京江宁区江宁街道',
       role: 1
     }, {
+      id: 9,
       name: '张三',
       phone: '15380762190',
       sex: '男',
@@ -101,20 +118,13 @@ const staticData = {
       address: '南京江宁区江宁街道',
       role: 1
     }, {
-      name: '张三',
-      phone: '15380762190',
+      id: 10,
+      name: '灿灿',
+      phone: '15797710717',
       sex: '男',
-      age: '27',
-      company: '南京中谷芯信息',
-      address: '南京江宁区江宁街道',
-      role: 1
-    }, {
-      name: '张三',
-      phone: '15380762190',
-      sex: '男',
-      age: '27',
-      company: '南京中谷芯信息',
-      address: '南京江宁区江宁街道',
+      age: '14',
+      company: '南京中国移动',
+      address: '江西太原市凤台市',
       role: 1
     }
   ]
