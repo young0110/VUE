@@ -4,9 +4,14 @@ import Vue from 'vue'
 import store from './store'
 import App from './App'
 import ElementUI from 'element-ui'
+import BaiduMap from 'vue-baidu-map'
 import router, {asyncRouterMap} from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/iconfont/iconfont.css'
+
+vue.use(BaiduMap, {
+  ak: ''
+})
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false

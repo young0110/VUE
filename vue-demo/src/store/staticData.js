@@ -13,10 +13,10 @@ const staticData = {
       icon: 'icon-charts',
       children: [
         {
-          name: '折线图展示',
+          name: '统计图展示',
           path: 'b1'
         }, {
-          name: '柱状图展示',
+          name: '地图展示',
           path: 'b2'
         }
       ]

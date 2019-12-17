@@ -100,7 +100,7 @@ export default {
   methods: {
     handleSizeChange () {},
     handleCurrentChange () {},
-    handleSearch() {
+    handleSearch () {
       this.searchParams.name = this.searchParams.name.trim()
       this.searchParams.phone = this.searchParams.phone.trim()
       if (this.searchParams.name) {
