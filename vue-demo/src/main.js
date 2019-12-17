@@ -9,8 +9,8 @@ import router, {asyncRouterMap} from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/iconfont/iconfont.css'
 
-vue.use(BaiduMap, {
-  ak: ''
+Vue.use(BaiduMap, {
+  ak: 'ZY7aIbSlkRGU1m5tQlopvIVxRtvKCi0M'
 })
 
 Vue.use(ElementUI)
