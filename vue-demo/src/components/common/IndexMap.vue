@@ -1,8 +1,12 @@
 <template>
   <div class="main">
-    <baidu-map ak="ZY7aIbSlkRGU1m5tQlopvIVxRtvKCi0M">
-      <bm-view></bm-view>
-    </baidu-map>
+    <baidu-map class="map"
+               :center="center"
+               :scroll-wheel-zoom="true"
+               :zoom="zoom"
+               @ready="mapReady"
+               @click="getPoint"
+    ></baidu-map>
   </div>
 </template>
 
@@ -10,10 +14,22 @@
 import BaiduMap from 'vue-baidu-map/components/map/Map.vue'
 import BmView from 'vue-baidu-map/components/map/MapView.vue'
 export default {
-  name: "IndexMap",
+  name: 'IndexMap',
   components: {
     BaiduMap,
     BmView
+  },
+  data () {
+    return {
+      center: {lng: 118.46, lat: 32.03},
+      zoom: 12
+    }
+  },
+  methods: {
+    mapReady ({Bmap, map}) {},
+    getPoint (e) {
+      console.log(e.point)
+    }
   }
 }
 </script>
@@ -22,5 +38,9 @@ export default {
 .main {
   width: 100%;
   height: 100%;
+  .map {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
