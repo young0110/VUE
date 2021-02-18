@@ -29,7 +29,7 @@ export const asyncRouterMap = [
     children: [
       {
         path: '/index',
-        name: 'index',
+        name: 'bright.css',
         title: '首页',
         component: () => import('@/components/back/common/Home')
       }, {
@@ -47,7 +47,8 @@ export const asyncRouterMap = [
             path: '/system/roleManager',
             name: 'RoleManager',
             title: '角色管理',
-            component: () => import('@/components/back/system/RoleManager')
+            // component: () => import('@/components/back/system/RoleManager')
+            component: resolve => (require(['@/components/back/system/RoleManager'], resolve))
           }
         ]
       }

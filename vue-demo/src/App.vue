@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'App'
-  /*  使用插件 persistedstate 解决 vuex 刷新数据丢失问题
+  /*  原如下 修改为 -> 使用插件 persistedstate 解决 vuex 刷新数据丢失问题
   created () {
     if (sessionStorage.getItem('store')) {
       this.$store.replaceState(Object.assign({}, this.$store.state, JSON.parse(sessionStorage.getItem('store'))))
@@ -19,30 +19,13 @@ export default {
 }
 </script>
 
-<style>
+<style type="less">
+@import "../static/css/common.css";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-html, body, #app {
   height  : 100%;
-  padding : 0;
-  margin  : 0;
-}
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding : 0;
-  margin  : 0;
-}
-li {
-  padding : 0;
-  margin  : 0;
-}
-p {
   padding : 0;
   margin  : 0;
 }
