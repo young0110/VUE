@@ -1,0 +1,15 @@
+.main {
+  background: rgba(255, 255, 255, .92);
+}
+.home-content {
+  background: rgba(255, 255, 255, 1);
+}
+.head-bar {
+  background: rgba(0, 0, 0, .92);
+}
+.footer-bar {
+  background: rgba(0, 0, 0, .82);
+}
+.intro-bar {
+  background: rgba(204, 204, 204, 0.82);
+}

@@ -1,5 +1,5 @@
 <template>
-    
+    <footer class="footer-bar"></footer>
 </template>
 
 <script>
@@ -16,6 +16,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="less">
+.footer-bar{
+  width: 100%;
+  height: 400px;
+}
 </style>

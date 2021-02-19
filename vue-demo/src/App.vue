@@ -19,14 +19,7 @@ export default {
 }
 </script>
 
-<style type="less">
-@import "../static/css/common.css";
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height  : 100%;
-  padding : 0;
-  margin  : 0;
-}
+<style lang="less">
+@import '../static/css/common.css';
+@import '../static/css/color.css';
 </style>
