@@ -1,15 +1,25 @@
 <template>
   <div class="main">
-    <div></div>
+    <HeadBar></HeadBar>
   </div>
 </template>
 
 <script>
+import HeadBar from './HeadBar'
 export default {
-    name: "Index"
+  name: 'Index',
+  components: {HeadBar},
+  data () {
+    return {
+
+    }
+  },
+  methods: {
+
+  }
 }
 </script>
 
-<style scoped>
+<style lang="less">
 
 </style>

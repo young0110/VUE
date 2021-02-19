@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/back/'
+import ManageHome from '@/components/back/'
+import Home from '@/components/home/'
 import Login from '@/components/common/Login'
 
 Vue.use(Router)
@@ -10,11 +11,14 @@ const constantRouterMap = [
     path: '/',
     redirect: '/login'
   }, {
+    path: '/login',
+    component: Login
+  }, {
     path: '/home',
     component: Home
   }, {
-    path: '/login',
-    component: Login
+    path: '/back',
+    component: ManageHome
   }
 ]
 
@@ -24,8 +28,8 @@ export default new Router({
 
 export const asyncRouterMap = [
   {
-    path: '/home',
-    component: Home,
+    path: '/back',
+    component: ManageHome,
     children: [
       {
         path: '/index',

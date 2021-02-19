@@ -16,3 +16,9 @@ ul, li, p, div {
   margin  : 0;
 }
 
+.main {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+}
+
