@@ -1,9 +1,7 @@
 <template>
   <div class="main">
     <HeadBar></HeadBar>
-    <section class="home-content x-1024">
-      <IntroBar></IntroBar>
-    </section>
+    <IntroBar></IntroBar>
     <FooterBar></FooterBar>
   </div>
 </template>
@@ -14,31 +12,6 @@ import IntroBar from './IntroBar'
 import FooterBar from './FooterBar'
 export default {
   name: 'Index',
-  components: {HeadBar, IntroBar, FooterBar},
-  data () {
-    return {
-      ads: [
-        {
-          type: 1,
-          pic: '',
-          title: '',
-          subtitle: '',
-          link: ''
-        }
-      ]
-    }
-  },
-  methods: {
-
-  }
+  components: {HeadBar, IntroBar, FooterBar}
 }
 </script>
-
-<style lang="less">
-.home-content {
-  height: auto;
-  min-height: 600px;
-  margin: 0 auto;
-  padding: 10px 0 10px 0;
-}
-</style>
