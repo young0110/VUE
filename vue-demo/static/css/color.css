@@ -1,6 +1,32 @@
 .main {
   background: rgba(255, 255, 255, .92);
 }
+.login-page-left {
+  background: #ccc;
+}
+.login-page-right {
+  background: #fff;
+}
+.login-bar {
+  background: #eee;
+}
+.login-win {
+
+}
+.login-win-line .el-input {
+  border-bottom: 2px solid #ccc;
+}
+.login-win-line .el-input:hover {
+  border-bottom: 2px solid #999;
+}
+.login-win-line .el-button {
+  background: #ccc;
+  color: #333;
+}
+.login-win-line .el-button:hover {
+  background: #999;
+  color: #fff;
+}
 .home-content {
   background: rgba(255, 255, 255, 1);
 }
