@@ -1,11 +1,11 @@
 <template>
     <section class="intro-bar x-1024">
-      <div v-for="(bar, index) in introBarList" :key="index">
-        <LandScapeBar v-if="bar.type === 1"></LandScapeBar>
-        <PortraitBar v-if="bar.type === 2"></PortraitBar>
-        <SplitLandScapeBar v-if="bar.type === 3"></SplitLandScapeBar>
-        <SplitPortraitBar v-if="bar.type === 4"></SplitPortraitBar>
-      </div>
+      <template v-for="(bar, index) in introBarList">
+        <LandScapeBar v-if="bar.type === 1" :key="index" :info="bar"></LandScapeBar>
+        <PortraitBar v-else-if="bar.type === 2" :key="index" :info="bar"></PortraitBar>
+        <SplitLandScapeBar v-else-if="bar.type === 3" :key="index" :info="bar"></SplitLandScapeBar>
+        <SplitPortraitBar v-else :key="index" :info="bar"></SplitPortraitBar>
+      </template>
     </section>
 </template>
 
@@ -22,15 +22,15 @@ export default {
       introBarList: [
         {
           type: 1,
-          title: '',
-          subTitle: '',
+          title: '横屏广告',
+          subTitle: '这是一个横屏广告',
           pic: '',
           link: ''
         },
         {
           type: 2,
-          title: '',
-          subTitle: '',
+          title: '竖屏广告',
+          subTitle: '这是一个竖屏广告',
           pic: '',
           link: ''
         },
@@ -38,14 +38,14 @@ export default {
           type: 3,
           items: [
             {
-              title: '',
-              subTitle: '',
+              title: '分屏横屏广告1',
+              subTitle: '这个是分屏横屏广告1',
               pic: '',
               link: ''
             },
             {
-              title: '',
-              subTitle: '',
+              title: '分屏横屏广告2',
+              subTitle: '这个是分屏横屏广告2',
               pic: '',
               link: ''
             }
@@ -55,20 +55,20 @@ export default {
           type: 4,
           items: [
             {
-              title: '',
-              subTitle: '',
+              title: '分屏竖屏广告1',
+              subTitle: '这个是分屏竖屏广告1',
               pic: '',
               link: ''
             },
             {
-              title: '',
-              subTitle: '',
+              title: '分屏竖屏广告2',
+              subTitle: '这个是分屏竖屏广告2',
               pic: '',
               link: ''
             },
             {
-              title: '',
-              subTitle: '',
+              title: '分屏竖屏广告3',
+              subTitle: '这个是分屏竖屏广告3',
               pic: '',
               link: ''
             }

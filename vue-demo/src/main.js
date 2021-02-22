@@ -33,6 +33,34 @@ router.beforeEach((to, from, next) => {
   }
 })
 
+// 自定义指令 图片加载失败时，加载默认图片
+Vue.directive('default-img', async function (el, binding) {
+  let imgUrl = binding.value
+  if (imgUrl) {
+    let ifExist = await imgUrlValid(imgUrl)
+    if (ifExist) {
+      el.setAttribute('src', imgUrl)
+    }
+  }
+})
+
+let imgUrlValid = function (url) {
+  return new Promise((resolve) => {
+    let img = new Image()
+    img.onload = function () {
+      if (this.complete) {
+        resolve(true)
+        img = null
+      }
+    }
+    img.onerror = function () {
+      resolve(false)
+      img = null
+    }
+    img.src = url
+  })
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

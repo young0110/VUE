@@ -34,17 +34,35 @@
   background: rgba(0, 0, 0, .82);
 }
 .intro-bar {
-  background: rgba(204, 204, 204, 0.82);
+  background: rgba(255, 255, 255, 0);
 }
 .landscape-bar {
   background: #ccc;
 }
+.landscape-bar .bar-title {
+  color: #000;
+}
+.landscape-bar .bar-sub-title {
+  color: #333;
+}
+.landscape-bar .bar-link {
+  color: #06c;
+}
 .portrait-bar {
   background: #ddd;
 }
+.portrait-bar .bar-title {
+  color: #000;
+}
+.portrait-bar .bar-sub-title {
+  color: #333;
+}
+.portrait-bar .bar-link {
+  color: #06c;
+}
 .split-landscape-bar {
-  background: #aaa;
+
 }
 .split-portrait-bar {
-  background: #bbb;
+
 }
