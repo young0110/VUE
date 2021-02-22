@@ -30,6 +30,9 @@ export default {
   width: 100%;
   height: auto;
   margin-bottom: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
   .bar-img {
     width: 100%;
     height: 480px;

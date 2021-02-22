@@ -58,7 +58,7 @@ export default {
     width: 50%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-content: center;
     .bar-title {
       width: 100%;
